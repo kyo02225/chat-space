@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
 
-  def indes
+  def index
   end
 
   def new
@@ -31,8 +31,8 @@ class GroupsController < ApplicationController
   end
 
   private
-  def group_paramas
-      params.require(:group).permit(:name { :user_ids =>[]})
+  def group_params
+    params.require(:group).permit(:name, { :user_ids => [] })
   end
 
   def set_group
