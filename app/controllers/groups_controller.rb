@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
 
-  
+  def indes
+  end
 
   def new
     @group= Group.new

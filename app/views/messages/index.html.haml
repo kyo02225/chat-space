@@ -1,5 +1,7 @@
 .wrapper
 
+  = render 'shared/side_bar'
+
   .side-bar
     .header
       %h3.header__name
@@ -13,20 +15,12 @@
             = fa_icon 'cog', class: 'icon'
     .groups
       .group
-        .group__name
-          グループ名
-        .group__message
-          新着メッセージ
-      .group
-        .group__name
-          グループ名
-        .group__message
-          新着メッセージ
-      .group
-        .group__name
-          グループ名
-        .group__message
-          新着メッセージ
+        - current_user.groups.each do |group|
+        = link_to '#' do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
 
 
   .chat
