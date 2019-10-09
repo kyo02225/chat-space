@@ -42,8 +42,4 @@ ActiveRecord::Schema.define(version: 20191009093247) do
     t.index ["name"], name: "index_users_on_name", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
-
-
-  add_foreign_key "group_users", "groups"
-  add_foreign_key "group_users", "users"
 end
