@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20191009093247) do
     t.index ["name"], name: "index_groups_on_name", unique: true, using: :btree
   end
 
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                                null: false
     t.string   "email",                  default: "", null: false
@@ -41,6 +42,4 @@ ActiveRecord::Schema.define(version: 20191009093247) do
     t.index ["name"], name: "index_users_on_name", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
-
-  
 end
