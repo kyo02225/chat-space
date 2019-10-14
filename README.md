@@ -90,3 +90,4 @@ config.generators do |g|
 - belongs_to :group
 
 
+test
