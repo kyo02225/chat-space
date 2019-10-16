@@ -58,6 +58,7 @@ gem 'erb2haml'
 gem 'devise' 
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'rails-ujs'
 
 group :development, :test do
   gem 'byebug', platform: :mri
