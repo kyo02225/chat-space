@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
   def index
-    if  params[:word].present?
-      @users = User.where('name LIKE(?)', "%#{params[:word]}%").where.not(id: current_user.id)
+    if  params[:keyword].present?
+      @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").where.not(id: current_user.id)
     else
       @users = []
     end
