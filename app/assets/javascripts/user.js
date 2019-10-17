@@ -17,7 +17,7 @@ $(function() {
         });
       }
       else {
-        appendErrMsgToHTML();
+        appendNoUser("一致する名前は有りません");
       }
     })
   });
