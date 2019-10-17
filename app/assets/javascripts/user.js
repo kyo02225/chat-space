@@ -28,10 +28,11 @@ $(function() {
     })
   
     .done(function(users) {
-      $("#user-search-field").empty();
+      $("#user-search-result").empty();
       if (users.length !== 0) {
         users.forEach(function(user){
           appendUser(user);
+          console.log(user)
         });
       }
       else {
