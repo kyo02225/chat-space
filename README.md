@@ -90,4 +90,3 @@ config.generators do |g|
 - belongs_to :group
 
 
-initial
