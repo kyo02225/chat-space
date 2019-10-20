@@ -1,6 +1,8 @@
-$(function(){ 
+
+
   function buildHTML(message){
-    var imagehtml = message.image == null ? "" : `<img src="${message.image}" class="lower-message__image">`
+    image = (message.image) ? `<img class= "lower-message__image" src=${message.image} >` : "";
+    
     var html =
       `<div class="message" data-message-id=${message.id}>
          <div class="upper-message">
@@ -15,11 +17,13 @@ $(function(){
            <p class="lower-message__content">
              ${message.content}
            </p>
-           ${imagehtml}
+           ${image}
          </div>
        </div>`
      return html;
  }
+
+$(function(){ 
 $('#new_message').on('submit', function(e){
  e.preventDefault();
  var formData = new FormData(this);
@@ -45,29 +49,35 @@ $('#new_message').on('submit', function(e){
   });
 })
 
+
+
 var reloadMessages = function () {
-  if (window.location.href.match(/messages/)){
+  if (window.location.href.match(/\/groups\/\d+\/messages/)){
     var last_message_id = $('.message:last').data("message-id"); 
 
     $.ajax({ 
       url: "api/messages", 
       type: 'get', 
       dataType: 'json', 
-      data: {last_id: last_message_id} 
+      data: {id: last_message_id} 
 
     })
     .done(function (messages) { 
       var insertHTML = '';
-      messages.forEach(function (message) {
-        insertHTML = buildHTML(message); 
-        $('.messages').append(insertHTML);
-      })
-      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+        messages.forEach(function (message) {
+          insertHTML = buildHTML(message); 
+          $('.messages').append(insertHTML)
+          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
     })
+  })
     .fail(function () {
       alert('自動更新に失敗しました');
     });
   }
 };
+
 setInterval(reloadMessages, 5000);
+
+
+
 
