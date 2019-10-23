@@ -89,4 +89,3 @@ config.generators do |g|
 - belongs_to :user
 - belongs_to :group
 
-1
