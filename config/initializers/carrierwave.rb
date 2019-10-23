@@ -12,6 +12,6 @@ CarrierWave.configure do |config|
     region: 'ap-northeast-1' #例 'ap-northeast-1'
   }
 
-  config.fog_directory  = 'arn:aws:s3:::kyo.chat-space.image-box'
+  config.fog_directory  = 'kyo.chat-space.image-box'
   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/kyo.chat-space.image-box'
 end
