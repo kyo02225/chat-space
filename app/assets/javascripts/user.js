@@ -41,6 +41,7 @@ $(function() {
     .fail(function() {
       alert('ユーザーの検索に失敗しました');
     })
+  });
   
     function addUser(user_id, user_name) {
 			var html = `<div class='chat-group-user clearfix' id='chat-group-user-${user_id}>
@@ -61,7 +62,6 @@ $(function() {
     $('#chat-group-users').on('click','.chat-group-user__btn--remove',function(){
 			$(this).parent().remove();
 		});
-  });
 });
 
 
